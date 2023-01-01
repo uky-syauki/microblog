@@ -8,11 +8,12 @@
 		{% endif %}
 	</head>
 	<body>
-		<div>Ahmad syauki: 
+		<div>ukigram: 
 			<a href="{{ url_for('index') }}">Home</a>
 			{% if current_user.is_anonymous %}
 			<a href="{{ url_for('login') }}">Login</a>
 			{% else %}
+			<a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
 			<a href="{{ url_for('logout') }}">Logout</a>
 			{% endif %}
 		</div>
@@ -27,5 +28,10 @@
 		{% endif %}
 		{% endwith %}
 		{% block content %}{% endblock %}
+	<footer style="text-align: center; morgin-bottom: 10px;">
+		<h5>Lebih baik merasakan lelahnya belajar,<br>
+		daripada harus merasakan pahitnya kebodohan</h5>
+		<p>@Belajar</p>
+	</footer>
 	</body>
 </html>
