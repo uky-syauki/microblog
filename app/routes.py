@@ -1,6 +1,7 @@
 from flask import render_template, flash, redirect, url_for, request
 from app import app, db
-from app.forms import RegistrationForm, LoginForm, EditProfileForm, RegistrationForm, EmptyForm, PostForm
+from app.email import send_password_reset_email
+from app.forms import RegistrationForm, LoginForm, EditProfileForm, RegistrationForm, EmptyForm, PostForm, ResetPasswordRequestForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Post
 from werkzeug.urls import url_parse
@@ -150,3 +151,20 @@ def unfollow(username):
 		return redirect(url_for('user',username=username))
 	else:
 		return redirect(url_for('index'))
+
+
+@app.route('/reset_password_request', methods=['GET', 'POST'])
+def reset_password_request():
+	if current_user.is_authenticated:
+		return redirect(url_for('index'))
+	form = ResetPasswordRequestForm()
+	if form.validate_on_submit():
+		user = User.query.filter_by(email=form.email.data).first()
+		if user:
+			send_password_reset_email(user)
+		flash('Periksa email anda untuk arahan mereset password')
+		return redirect(url_for('login'))
+	return render_template('reset_password_request.html', title='Reset Password', form=form)
+
+
+
