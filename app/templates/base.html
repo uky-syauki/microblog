@@ -1,14 +1,12 @@
-<!doctype html>
-<html>
-	<head>
-		{% if title %}
-		<title>{{ title }} - Ahmad syauki</title>
-		{% else %}
-		<title>Welcome to Ahmad syauki</title>
-		{% endif %}
-	</head>
-	<body style="background: black; color:white;">
-		<div>UkiCHAT: 
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+	{% if title %}{{ title }} - UCHAT{% else %} Welcome to UCHAT{% endif %}
+{% endblock %}
+
+{% block navbar %}
+	<body style=
+		<div>UCHAT: 
 			<a href="{{ url_for('index') }}">Home</a>
 			<a href= "{{ url_for('explore') }}">Explore</a>
 			{% if current_user.is_anonymous %}
