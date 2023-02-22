@@ -15,6 +15,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="{{ url_for('index') }}">UCHAT</a>
+				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li><a href="{{ url_for('index') }}">Home</a></li>
@@ -29,7 +30,7 @@
 						{% endif %}
 					</ul>
 				</div>
-			</div>
+
 		</div>
 	</nav>
 {% endblock %}
@@ -48,32 +49,7 @@
 	</div>
 {% endblock %}
 
-		<div>UCHAT: 
-			<a href="{{ url_for('index') }}">Home</a>
-			<a href= "{{ url_for('explore') }}">Explore</a>
-			{% if current_user.is_anonymous %}
-			<a href="{{ url_for('login') }}">Login</a>
-			{% else %}
-			<a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
-			<a href="{{ url_for('logout') }}">Logout</a>
-			{% endif %}
-		</div>
-		<hr>
-		{% with messages = get_flashed_messages() %}
-		{% if messages %}
-		<ul>
-			{% for message in messages %}
-			<li>{{ message }}</li>
-			{% endfor %}
-		</ul>
-		{% endif %}
-		{% endwith %}
-		{% block content %}{% endblock %}
-	<footer style="text-align: center; morgin-bottom: 10px;">
-<!--		<h5>Lebih baik merasakan lelahnya belajar,<br>
-		daripada harus merasakan pahitnya kebodohan</h5> -->
-		<br>
-		<p>@Belajar</p>
-	</footer>
-	</body>
-</html>
+{% block scripts %}
+	{{ super() }}
+	{{ moment.include_moment() }}
+{% endblock %}
