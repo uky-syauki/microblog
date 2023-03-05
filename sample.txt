@@ -1,0 +1,14 @@
+(venv) $ pybabel init -i messages.pot -d app/translations -l es
+(venv) $ pybabel compile -d app/translations
+
+(venv) $ pybabel extract -F babel.cfg -k _l -o messages.pot 
+(venv) $ pybabel update -i messages.pot -d app/translations
+
+For usage translate command
+>>> for add new language: (venv) $ flask translate init <language-code>
+>>> for update all languages after markers: (venv) $ flask translate update
+>>> for compile all languagenafter update: (venv) $ flask translate compile
+
+For usage flask migrate
+>>> for update db models: (venv) $ flask db migrate -m "add language to posts"
+>>> for menerapkan update db models: (venv) $ flask db upgrade

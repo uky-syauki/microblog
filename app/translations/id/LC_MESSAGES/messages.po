@@ -1,0 +1,176 @@
+# Indonesian (Indonesia) translations for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-03-05 02:57+0000\n"
+"PO-Revision-Date: 2023-03-05 03:00+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: id_ID\n"
+"Language-Team: id_ID <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.11.0\n"
+
+#: app/__init__.py:21
+msgid "Please log in to access uchat."
+msgstr "Login dulu untuk dapat mengguanakan UCHAT."
+
+#: app/forms.py:9 app/forms.py:34
+msgid "Username"
+msgstr "Nama Pengguna"
+
+#: app/forms.py:10 app/forms.py:18 app/forms.py:63
+msgid "Password"
+msgstr "Kata Sandi"
+
+#: app/forms.py:11
+msgid "Remember Me"
+msgstr "Ingat Saya"
+
+#: app/forms.py:12 app/templates/login.html:5
+msgid "Sign In"
+msgstr "Masuk"
+
+#: app/forms.py:16
+msgid "username"
+msgstr "Nama Pengguna"
+
+#: app/forms.py:17 app/forms.py:59
+msgid "Email"
+msgstr "Email"
+
+#: app/forms.py:19 app/forms.py:64
+msgid "Repeat Password"
+msgstr "Ulangi Password"
+
+#: app/forms.py:20 app/templates/register.html:5
+msgid "Register"
+msgstr "Daftar"
+
+#: app/forms.py:25 app/forms.py:46
+msgid "Please use a different username."
+msgstr "TOlong gunakan nama pengguna lain."
+
+#: app/forms.py:30
+msgid "Please use a different email address."
+msgstr "Tolong gunakan email lain."
+
+#: app/forms.py:35
+msgid "About me"
+msgstr "Tentang Saya"
+
+#: app/forms.py:36 app/forms.py:55
+msgid "Submit"
+msgstr "Kirim"
+
+#: app/forms.py:54
+msgid "Say something"
+msgstr "Katakan Sesuatu"
+
+#: app/forms.py:60 app/forms.py:65
+msgid "Request Password Reset"
+msgstr "Minta ganti password"
+
+#: app/templates/_post.html:14
+#, python-format
+msgid "%(username)s said %(when)s"
+msgstr "%(username)s berkata %(when)s"
+
+#: app/templates/base.html:21
+msgid "Home"
+msgstr "Beranda"
+
+#: app/templates/base.html:22
+msgid "Explore"
+msgstr "Jelajahi"
+
+#: app/templates/base.html:26
+msgid "Login"
+msgstr "Masuk"
+
+#: app/templates/base.html:28
+msgid "Profile"
+msgstr "Profile"
+
+#: app/templates/base.html:29
+msgid "logout"
+msgstr "Keluar"
+
+#: app/templates/edit_profile.html:5
+msgid "Edit Profile"
+msgstr "Ubah Profile"
+
+#: app/templates/index.html:5
+#, python-format
+msgid "Hi, %(username)s!"
+msgstr "Hi, %(username)s!"
+
+#: app/templates/index.html:17 app/templates/user.html:41
+msgid "Newer posts"
+msgstr "Postingan Baru"
+
+#: app/templates/index.html:22 app/templates/user.html:46
+msgid "Older posts"
+msgstr "Postingan Lama"
+
+#: app/templates/login.html:12
+msgid "New User?"
+msgstr "Pengguna Baru?"
+
+#: app/templates/login.html:12
+msgid "Register!"
+msgstr "Daftar!"
+
+#: app/templates/login.html:14
+msgid "Forgot Your Password?"
+msgstr "Lupa Password?"
+
+#: app/templates/login.html:15
+msgid "Reset"
+msgstr "Ubah"
+
+#: app/templates/reset_password.html:5
+msgid "Reset Your Password"
+msgstr "Ubah Password Anda"
+
+#: app/templates/reset_password_request.html:5
+msgid "Reset Password"
+msgstr "Ubah Password"
+
+#: app/templates/user.html:8
+msgid "User"
+msgstr "Pengguna"
+
+#: app/templates/user.html:11
+msgid "Last seen on"
+msgstr "Terakhir dilihat pada"
+
+#: app/templates/user.html:13
+#, python-format
+msgid "%(count)d followers"
+msgstr "%(count)d pengikut"
+
+#: app/templates/user.html:13
+#, python-format
+msgid "%(count)d  following"
+msgstr "%(count)d mengikuti"
+
+#: app/templates/user.html:15
+msgid "Edit your profile"
+msgstr "Ubah profile kamu"
+
+#: app/templates/user.html:20
+msgid "Follow"
+msgstr "Ikuti"
+
+#: app/templates/user.html:27
+msgid "Unfollow"
+msgstr "Berhenti ikuti"
+

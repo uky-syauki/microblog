@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect, url_for, request
+from flask import render_template, flash, redirect, url_for, request, g
 from app import app, db
 from app.email import send_password_reset_email
 from app.forms import RegistrationForm, LoginForm, EditProfileForm, RegistrationForm, EmptyForm, PostForm, ResetPasswordRequestForm, ResetPasswordForm
@@ -6,6 +6,8 @@ from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Post
 from werkzeug.urls import url_parse
 from datetime import datetime
+from flask_babel import get_locale
+from langdetect import detect, LangDetectException
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -14,7 +16,11 @@ from datetime import datetime
 def index():
 	form = PostForm()
 	if form.validate_on_submit():
-		post = Post(body=form.post.data, author=current_user)
+		try:
+			language = detect(form.post.data)
+		except LangDetectException:
+			language = ''
+		post = Post(body=form.post.data, author=current_user, language=language)
 		db.session.add(post)
 		db.session.commit()
 		flash('Postingan terkirim')
@@ -182,3 +188,10 @@ def reset_password(token):
 		flash('Your password has been reset.')
 		return redirect(url_for('login'))
 	return render_template('reset_password.html', form=form)
+
+@app.before_request
+def before_request():
+	if current_user.is_authenticated:
+		current_user.last_seen = datetime.utcnow()
+		db.session.commit()
+	g.locale = str(get_locale())
